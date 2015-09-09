@@ -6,7 +6,7 @@ php:
   - 5.5
 
 before_script:
-  - php composer.phar install require symfony/http-foundation:${SYMFONY_VERSION}
+  - php composer.phar install require --prefer-dist
 
 script: phpunit --coverage-text
 
