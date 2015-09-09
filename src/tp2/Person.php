@@ -4,12 +4,14 @@ namespace tp2;
 
 class Person
 {
+protected $name;
+
     /**
      * @param string $name
      */
     public function __construct($name)
     {
-        // TO IMPLEMENT
+        $this->name = $name;
     }
 
     /**
@@ -17,6 +19,6 @@ class Person
      */
     public function getName()
     {
-        // TO IMPLEMENT
+        return $this->name;
     }
 }
