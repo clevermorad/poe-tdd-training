@@ -6,7 +6,7 @@ php:
   - 5.5
 
 before_script:
-  - php composer.phar install --prefer-dist
+  - composer install --prefer-dist
 
 script: phpunit --coverage-text
 
