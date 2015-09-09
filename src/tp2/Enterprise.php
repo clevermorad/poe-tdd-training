@@ -4,23 +4,37 @@ namespace tp2;
 
 use tp2\Person;
 
-class Enterprise
+class Enterprise 
 {
+
+    public $listPerson = array();
+
     public function add(Person $person)
     {
-        // TO IMPLEMENT
+       
+      $this->listPerson[] = $person;
+
     }
 
     public function remove(Person $personToRemove)
     {
-        // TO IMPLEMENT
+
+        foreach ($this->listPerson as $key => $value) {
+           
+            if($personToRemove === $value){
+
+             unset($this->listPerson[$key]);  
+             break;
+
+            }
+        }
     }
 
     /**
      * @return boolean
      */
     public function employ(Person $person)
-    {
-        // TO IMPLEMENT
+    { 
+       return in_array($person ,$this->listPerson);
     }
 }

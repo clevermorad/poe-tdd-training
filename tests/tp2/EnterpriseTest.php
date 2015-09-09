@@ -14,17 +14,23 @@ class EnterpriseTest extends \PHPUnit_Framework_TestCase
 	{
 		$this->person = new Person('toto');
 		$this->entreprise = new Enterprise();
+		$this->entreprise->add($this->person);
+
 	}
 
 	public function testadd()
     {
        
-    	$this->entreprise->add($person);
+    	//$this->entreprise->add($this->person);
+    	$this->assertEquals(true,$this->entreprise->employ($this->person));
     }
 
     public function testremove()
     {
-        // TO IMPLEMENT
+        //$this->entreprise->add($this->person);
+        //$this->assertEquals(true,$this->entreprise->employ($this->person));
+        $this->entreprise->remove($this->person);
+        $this->assertEquals(false,$this->entreprise->employ($this->person));
     }
 
     /**
@@ -32,7 +38,9 @@ class EnterpriseTest extends \PHPUnit_Framework_TestCase
      */
     public function testemploy()
     {
-        // TO IMPLEMENT
+    	$this->assertEquals(true, $this->entreprise->employ($this->person));
+        
+
     }
 
 }
