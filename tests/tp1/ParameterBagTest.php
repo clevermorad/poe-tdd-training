@@ -69,16 +69,22 @@ class ParameterBagTest extends \PHPUnit_Framework_TestCase
     public function testAll()
     {
 
+        $tab = array('foo' => 'bar');
+        $this->assertEquals($tab,$this->bag->all());
+
         
     }
 
     public function testKeys()
     {
-
+        $tab = array('foo');
+        $this->assertEquals($tab,$this->bag->keys());
     }
 
     public function testAdd()
     {
-
+        $tab = array('toto' => 'titi');
+        $this->bag->add($tab);
+        $this->assertEquals(2,$this->bag->count());
     }
 }
